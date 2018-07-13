@@ -1,0 +1,25 @@
+Install MySQL
+1.CREATE SCHEMA `mquotient` ;
+2.CREATE TABLE `mquotient`.`contact_detail1` (
+  `cd_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `cd_first_name` VARCHAR(45) NOT NULL,
+  `cd_last_name` VARCHAR(45) NULL,
+  `cd_mobile_number` VARCHAR(45) NULL,
+  `cd_email_id` VARCHAR(45) NOT NULL,
+  `cd_address` VARCHAR(45) NULL,
+  `cd_city` VARCHAR(45) NULL,
+  `cd_state` VARCHAR(45) NULL,
+  `cd_zip_code` VARCHAR(45) NULL,
+  `cd_image` VARCHAR(255) NULL,
+  PRIMARY KEY (`cd_id`));
+
+
+Install PHP
+1.Copy the folder api in /var/www/html
+2.Give the all permission to api folder
+
+Angular
+1.Run the command npm install
+2.This npm install all modules listed as dependencies in package.json .
+
+
