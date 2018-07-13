@@ -1,0 +1,63 @@
+<div class="container" *ngIf=contact>
+  <div class="row" style="margin-top: 2%">
+    <div class="col-md-12 text-center">
+      <img src="http://localhost/api/uploads/{{contact.cd_image}}" alt="Italian Trulli" style="width: 30%; height: auto;">
+    </div>
+  </div>
+  <hr>
+  
+  <div class="row text-center" style="margin-top: 2%">
+      <div class="col-md-12">
+        <h3>
+        <label style="font-weight: bold;">Details of </label>
+        <span> {{contact.cd_first_name}} {{contact.cd_last_name}}</span>
+      </h3>
+      </div>
+    </div>
+  <div class="row text-center" style="margin-top: 2%">
+    <div class="col-md-6">
+      <label style="font-weight: bold;">First Name : &nbsp;</label>
+      <span>{{contact.cd_first_name}}</span>
+    </div>
+    <div class="col-md-6">
+        <label style="font-weight: bold;">Last Name : &nbsp;</label>
+        <span>{{contact.cd_last_name}}</span>
+    </div>
+  </div>
+  <div class="row text-center" style="margin-top: 2%">
+      <div class="col-md-6">
+        <label style="font-weight: bold;">Mobile No. : &nbsp;</label>
+      <span>{{contact.cd_mobile_number}}</span>
+      </div>
+      <div class="col-md-6">
+        <label style="font-weight: bold;">Email id : &nbsp;</label>
+      <span>{{contact.cd_email_id}}</span>
+      </div>
+    </div>
+    <div class="row text-center" style="margin-top: 2%">
+        <div class="col-md-6">
+          <label style="font-weight: bold;">Address : &nbsp;</label>
+        <span>{{contact.cd_address}}</span>
+        </div>
+        <div class="col-md-6">
+          <label style="font-weight: bold;">City : &nbsp;</label>
+        <span>{{contact.cd_city}}</span>
+        </div>
+      </div>
+      <div class="row text-center" style="margin-top: 2%">
+          <div class="col-md-6">
+            <label style="font-weight: bold;">State : &nbsp;</label>
+        <span>{{contact.cd_state}}</span>
+          </div>
+          <div class="col-md-6">
+            <label style="font-weight: bold;">Zip Code : &nbsp;</label>
+        <span>{{contact.cd_zip_code}}</span>
+          </div>
+        </div>
+        <div class="row text-center" style="margin-top: 2%">
+            <div class="col-md-12">
+                <a class="btn btn-info" (click)="goBack()">Home</a> 
+            </div>
+          </div>
+</div>
+

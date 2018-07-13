@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<div class="row text-center" style="margin-top: 1%">
+  <div class="col-md-12">
+    <h2>All Contacts <i class="fa fa-address-book"></i></h2>
+    <hr>
+  </div>
+</div>
+<div class="row text-right">
+    <div class="col-md-4">
+        <input class="form-control" type="text" placeholder="Search enter text" name="search" [(ngModel)]="filter">      
+    </div>
+    <div class="col-md-4">
+        &nbsp;
+    </div>
+    <div class="col-md-4">
+        <a class="btn btn-success" routerLink="/add"><i class="fa fa-user-plus"></i> Add&nbsp;</a>
+    </div>
+  </div>
+<br>
+<table class="table table-bordered" >
+  <thead>
+    <tr>
+      <td>S.no</td>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Mobile</td>
+      <td>Email</td>
+      
+      
+      <td width=275 align="center">Action</td>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngFor="let contact of contacts | filter:filter | paginate: { itemsPerPage: 5, currentPage: p };let i = index">
+         <td>{{ (p - 1) * 5 + i +1  }}</td>
+         <td>{{contact.cd_first_name}}</td>
+         <td>{{contact.cd_last_name}}</td>
+         <td>{{contact.cd_mobile_number}}</td>
+         <td>{{contact.cd_email_id}}</td>
+         
+         
+        <td width=275 align="center"> 
+            <a class="btn btn-success" routerLink="/detail/{{contact.cd_id}}"><i class="fa fa-vcard-o"></i></a>
+            <a class="btn btn-info" routerLink="/edit/{{contact.cd_id}}" style="margin-left:2%;"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-danger" (click)="deleteContact(contact.cd_id)" style="margin-left:2%;"><i class="fa fa-trash-o"></i></a>
+        </td>
+     </tr>
+    
+  </tbody>
+</table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
