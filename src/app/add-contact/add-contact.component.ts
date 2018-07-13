@@ -18,27 +18,25 @@ export class AddContactComponent implements OnInit {
     private contactService: ContactService,
     private router: Router) { }
 
-    title = 'app';
     public uploader: FileUploader = new FileUploader({url: URL, itemAlias: 'cd_image'});
 
   ngOnInit() {
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
     this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
-         console.log('ImageUpload:uploaded:', item, status, response);
+          console.log('ImageUpload:uploaded:', item, status, response);
      };
 
   }
+
   id : string ;
   model = new Contact(this.id);
-  
 
   addContact(){
-    console.log("dgfd");
-      this.contactService
+    this.contactService
         .addContact(this.model)
         .subscribe(()=> this.goBack());
   }
-   goBack(){
+  goBack(){
     this.router.navigate(['/']);
   }
 }

@@ -31,21 +31,19 @@ export class EditComponent implements OnInit {
   id = this.route.snapshot.params['id'];
   model = new Contact(this.id);
   getContact(){
-    console.log("edit");
     this.contactService
-      .getContact(this.id)
-      .subscribe(employee =>{
-          this.model = employee[0];
+        .getContact(this.id)
+        .subscribe(employee =>{
+            this.model = employee[0];
           })
   };
   updateContact(){
     this.contactService
-      .updateContact(this.model)
-      .subscribe(()=> this.goBack());
-}
+        .updateContact(this.model)
+        .subscribe(()=> this.goBack());
+  }
 
- goBack(){
-  this.router.navigate(['/']);
-}
-
+  goBack(){
+    this.router.navigate(['/']);
+  }
 }

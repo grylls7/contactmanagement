@@ -14,26 +14,27 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _contactService: ContactService,
-     private router: Router) {}
+    private router: Router) {}
 
   contacts:any;   
   p: number = 1;
   sno: number = 1;
+
   ngOnInit() {
     this.getContacts();
   }
   getContacts(){
     this._contactService
-       .getContacts()
-       .subscribe(contacts => {
-         this.contacts = contacts;
-     } )
- }
+        .getContacts()
+        .subscribe(contacts => {
+          this.contacts = contacts;
+        } )
+  }
  deleteContact(id){
      this._contactService
-       .deleteContact(id)
-       .subscribe(() => {
-       this.getContacts();
+         .deleteContact(id)
+         .subscribe(() => {
+            this.getContacts();
      } )
  }
 }

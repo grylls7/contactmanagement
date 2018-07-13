@@ -20,19 +20,18 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this.getContactDetail();
   }
+  
   contact:Contact;
   getContactDetail(){
     var id = this.route.snapshot.params['id'];
     this.contactService
-      .getContact(id)
-      .subscribe(contact =>{
-          this.contact = contact[0];
-          })
+        .getContact(id)
+        .subscribe(contact =>{
+            this.contact = contact[0];
+        })
   };
 
   goBack(){
     this.router.navigate(['/']);
   }
-
-
 }
